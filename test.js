@@ -1,5 +1,5 @@
 function dummyFunc() {
-    setTimeout(() => {console.log('dummy msg')}, 5000);
+    setTimeout(() => {throw new Error('Some error occurred !!!')}, 5000);
 }
 
 dummyFunc();
