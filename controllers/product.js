@@ -7,10 +7,9 @@ const controller = {
 
     createProduct: async (req, res) => {
         const productDetail = req.body;
-        console.log('request body ===> ', req.body);
         productArr.push(productDetail);
         return res.send({ msg: 'Created Product Successfully' });
     },
 };
 
-module.exports = controller;
+export default controller;

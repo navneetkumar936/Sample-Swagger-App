@@ -3,20 +3,29 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js --ignore swagger.json",
     "prepare": "husky install",
-    "sample":"echo 'Hello'",
-    "dummy": "node test.js"
+    "sample": "echo 'Hello'",
+    "dummy": "node test.js",
+    "create-swagger": "node createswagger.js",
+    "create-new-doc": "node swaggerHub.js createSwagger=true",
+    "update-doc": "node swaggerHub.js updateSwagger=true",
+    "list-doc": "node swaggerHub.js listSwagger=true"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "node-fetch": "^3.3.1",
     "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^4.6.2"
+    "swagger-ui-express": "^4.6.2",
+    "swaggerhub-cli": "^0.7.2"
   },
   "devDependencies": {
     "husky": "^8.0.3"

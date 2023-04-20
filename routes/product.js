@@ -1,5 +1,7 @@
-const Express = require('express');
-const { productList, createProduct, } = require('../controllers/product');
+import Express from 'express';
+import productController from '../controllers/product.js';
+
+const { productList, createProduct, } = productController;
 
 const route = Express
     .Router()
@@ -27,16 +29,14 @@ const route = Express
      *     description: Create a product
      *     produces:
      *       - application/json
-     *     parameters:
-     *       - name: Create a new product
-     *         description: Product object
-     *         in: body
-     *         required: true
-     *         schema:
-     *           properties:
-     *              name:
+     *     requestBody:
+     *       content:
+     *         'application/json':
+     *           schema:
+     *            properties:
+     *               name:
      *                  type: string
-     *              quantity:
+     *               quantity:
      *                  type: number
      *     responses:
      *       200:
@@ -44,4 +44,4 @@ const route = Express
      */
     .post('/product', createProduct);
 
-module.exports = route;
+export default route;
